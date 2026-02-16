@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYM 정비/진단 T-bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔧 TYM 정비/진단 T-bot</h1>
+            <p class="subtitle">TYM 트랙터 정비 및 진단 정보를 제공하는 챗봇입니다</p>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        안녕하세요! TYM 정비/진단 T-bot입니다. 👋<br>
+                        트랙터 모델명, 증상, 오류 코드 등을 입력해주시면 관련 진단 정보를 제공해드립니다.<br><br>
+                        <strong>예시 질문:</strong><br>
+                        • "T115 PTO 작동 안됨"<br>
+                        • "K110E DEF 필터 교체"<br>
+                        • "LX1100E 엔진 오류"<br>
+                        • "TX76 DPF 문제"
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="질문을 입력하세요..." 
+                    autocomplete="off"
+                >
+                <button id="sendButton">전송</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <button id="refreshButton" class="refresh-btn">데이터 새로고침</button>
+            <span id="dataCount" class="data-count">데이터 로딩 중...</span>
+        </div>
+    </div>
+
+    <!-- 검색 모달 -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>질문 로그 검색</h2>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="search-form">
+                    <div class="form-group">
+                        <label for="searchDate">날짜:</label>
+                        <input type="date" id="searchDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="searchTime">시간:</label>
+                        <input type="time" id="searchTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="searchQuestion">질문 내용:</label>
+                        <input type="text" id="searchQuestion" placeholder="질문 내용을 입력하세요...">
+                    </div>
+                    <button id="searchLogsButton" class="search-btn">검색</button>
+                </div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 누적 카운트 표시 (우측 하단) -->
+    <div id="totalCountBadge" class="total-count-badge">
+        <span class="count-label">누적 질문:</span>
+        <span id="totalCountValue" class="count-value">0</span>
+    </div>
+
+    <!-- 검색 버튼 (우측 하단) -->
+    <button id="searchButton" class="search-button" title="질문 로그 검색">🔍</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

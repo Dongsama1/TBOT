@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: tym-chatbot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # 진단 데이터 경로는 기본값(프로젝트 내부 diagnostics 폴더) 사용
+      # 또는 환경 변수로 설정 가능:
+      # - key: DIAGNOSTICS_PATH
+      #   value: /path/to/diagnostics
+

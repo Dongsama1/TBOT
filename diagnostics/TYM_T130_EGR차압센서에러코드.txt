@@ -1,0 +1,17 @@
+1) 관련내용
+25년 정비사례 86페이지
+
+2) 에러코드
+- SPN 411 FMI 2 / Engine – EGR differential pressure – Data erratic intermittent or incorrect
+
+3) 고장내용
+- CAC 아웃렛 호스 갈라짐 발생
+- 흡기량 측정 불량으로 EGR 차압센서 측정값 오류 발생
+
+4) 고장현상
+- 에러 점등
+- 엔진 출력 저하
+- RPM 상승 불량
+
+5) 조치내용
+- CAC 아웃렛 호스 교체

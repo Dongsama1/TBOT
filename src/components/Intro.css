@@ -1,0 +1,95 @@
+.intro-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  color: #000000;
+  padding-bottom: 80px;
+}
+
+.intro-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.enter-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.enter-button:hover {
+  background-color: #45a049;
+}
+
+.settings-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.intro-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.intro-image-container {
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 400px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #666;
+  font-size: 18px;
+}
+
+.intro-text {
+  text-align: center;
+}
+
+.intro-text h1 {
+  font-size: 28px;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
