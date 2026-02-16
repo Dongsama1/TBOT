@@ -102,11 +102,15 @@ if errorlevel 1 (
     
     git remote add origin "%repourl%"
     if errorlevel 1 (
-        echo [오류] 원격 저장소 추가 실패
-        pause
-        exit /b 1
+        echo [경고] 원격 저장소가 이미 존재합니다. 기존 저장소를 사용합니다.
+        git remote set-url origin "%repourl%"
     )
     echo [완료] GitHub 저장소가 연결되었습니다.
+    echo.
+) else (
+    REM 이미 원격 저장소가 있으면 URL 확인
+    for /f "tokens=*" %%i in ('git remote get-url origin 2^>nul') do set currenturl=%%i
+    echo [확인] GitHub 저장소가 이미 연결되어 있습니다: %currenturl%
     echo.
 )
 
