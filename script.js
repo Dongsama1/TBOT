@@ -1,4 +1,23 @@
-const API_URL = 'http://localhost:3000/api';
+// API URL: 환경에 따라 자동 감지
+// 배포 환경: 상대 경로 사용 (같은 도메인)
+// 로컬 개발: localhost:3000 사용 (다른 포트에서 개발 서버 실행 시)
+const getApiUrl = () => {
+    const hostname = window.location.hostname;
+    const port = window.location.port;
+    
+    // 로컬 개발 환경 (localhost 또는 127.0.0.1)
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        // 포트가 3000이 아니면 localhost:3000 사용 (Vite 개발 서버 등)
+        if (port && port !== '3000') {
+            return 'http://localhost:3000/api';
+        }
+    }
+    
+    // 배포 환경 또는 같은 포트에서 실행 중: 상대 경로 사용
+    return '/api';
+};
+
+const API_URL = getApiUrl();
 
 // DOM 요소
 const chatMessages = document.getElementById('chatMessages');
